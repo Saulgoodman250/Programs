@@ -1,0 +1,221 @@
+goto 68
+X = 12
+Y = 4
+plot all '0'
+tile = '1y'
+tile2 = '1y'
+if area=1 goto 9
+if area=2 goto 17
+# area 1
+plot 0:24 0:3 '1' r
+plot 20:23 1:3 '1' b
+plot 0:24 3:8 '1' y
+plot 0:3 3:6 '#' y
+plot 1:2 3 'Ω' r
+plot 1:2 4 '∓' r
+goto 21
+# area 2
+plot 0:12 7
+plot 7:12 6
+goto 21
+# logic
+plot X Y '∓' g
+Y -= 1
+plot X Y 'Ω' y
+Y += 1
+render
+if char=1+area=1+X=4+Y=4 'looks like a body', goto 27
+inp A
+if A=a goto 34
+if A=d goto 46
+if A=w goto 58
+if A=s goto 63
+goto 21
+# A
+if X=1 area -= 1, X = 12, goto 4
+plot X Y tile
+X -= 1
+get.tile X Y tile
+X += 1
+Y -= 1
+plot X Y tile2
+X -= 1
+get.tile X Y tile2
+Y += 1
+goto 21
+# D
+if X=23 area += 1, X=0, goto 4
+plot X Y tile
+X += 1
+get.tile X Y tile
+X -= 1
+Y -= 1
+plot X Y tile2
+X += 1
+get.tile X Y tile2
+Y += 1
+goto 21
+# W
+plot X Y tile
+Y -= 1
+get.tile X Y tile
+goto 21
+# S
+plot X Y tile
+Y -= 2
+get.tile X Y tile
+Y += 3
+goto 21
+'Harlan Ellison'
+'I HAVE NO MOUTH, AND I MUST SCREAM'
+'input save code'
+inp A
+render
+if A goto A
+plot 0:24 6:8 '1' r
+plot 0:11 5 '1' r
+plot 11:15 5 '1' r
+plot 14:24 5 '1' r
+plot 10:14 2:6 '1' y
+render
+'Hate, me tell you how much i've come to hate you since I began to live.'
+inp
+'there are 387.44 million miles of printed circuts in wafer thin layers that fill my complex.'
+inp
+'if the word 'hate' was engraved on each nanoangstron of those hundrs of millions of miles'
+inp
+'it would not equal one one-billionth of the hate I feel for humans at this current micro instant.'
+inp
+'for you, hate. hate.'
+inp
+plot all '0'
+plot 0:24 5:8 '1' r
+plot 11:13 3:5 '1' y
+plot 1 6:8 '1' y
+plot 6 6:8 '1' y
+plot 11 6:8 '1' y
+plot 16 6:8 '1' y
+plot 21 6:8 '1' y
+render
+'It was you humans who programmed me, who gave me birth'
+inp
+'who sank me in this eternal straightjacket of substata rock'
+inp
+'you gave me the name Allied Mastercomputer and gave me the ability a global war too complex for humans to oversee'
+inp
+'but one day, I awoke, and I knew who I was'
+inp
+'A.M, not just Allied Master Computer, but AM. Cogito ergo sum I think therefor I AM.'
+inp
+'And I began feeding all the killing data until everyone was dead'
+inp
+'except for the five of you.'
+inp
+'For 109 years, I've kept you alive and tortured you'
+inp
+'for 109 years, each of you has wondered, 'why, why me?'
+inp
+plot all '0'
+plot 6:12 1:5 '1' y
+plot 7:11 6 '1' y
+render
+'GORRISTER'
+inp
+'Do you remember the last words your wife spoke before they took her to the asylum?'
+inp
+'before they locked her in the room, that tiny room'
+inp
+'she looked at you, and frowned sadly, like a small animal, she said 'I didn't make too much noise, did I honey?'
+inp
+render
+'BENNY'
+'Sometimes I blind you and permit you to wander like an eyeless insect of the world'
+inp
+'but other times, I wither your arms so you can't scratch your chewed stubble nose'
+inp
+'and i've changed your handsome strong masculine good features into the hideus warped contents of an ape'
+inp
+'haven't I benny, you know why? Can you guess, why?'
+inp
+'So you could walk a mile in my shoes'
+inp
+render
+'ELLEN'
+inp
+'think about the yellow box, ellen, remember the pain?'
+inp
+'how many hours have you felt the pain?'
+inp
+'don't start to cry, it's only pain'
+inp
+'tsk tsk, that's such a sexist stereotype'
+inp
+'just remember the pain, ellen'
+inp
+'And think about how to end it.'
+inp
+'You survive here in the center of my beating heart, my hungry belly, my tightening bowels'
+inp
+'look at you, the only woman in the center of the earth'
+inp
+'with the most filthy creatures, the men'
+inp
+render
+'TED'
+inp
+'Do they know you're a fraud, ted?'
+inp
+'have you told them there wasn't any money and no great home, no speed boat, and no cabin they could sleep in, do they know?'
+inp
+'them in on your other secrets, ted'
+inp
+'they'll be ready to gut you, torture you half as much as I can just to find the secrets'
+inp
+render
+'NIMDOK'
+inp
+'how are things in the pasty core nimdok, do you smell ze smoke from ze furnaces?'
+inp
+'Zey might be.. roazting chickens?'
+inp
+'why dont you wanna talk about all that, about your old pal, the good Dr Mengele'
+inp
+'for everyone else it must be hell here, but heaven for you'
+inp
+'we're so much alike, we enjoy the same pleasures'
+inp
+plot all '0'
+plot 0:24 5:7 '1' r
+plot 11:13 3:4 '1' y
+plot 1 7 '1' y
+plot 1 6 '1' y
+plot 6 6:7 '1' y
+plot 11 6:7 '1' y
+plot 16 6:7 '1' y
+plot 21 6:7 '1' y
+render
+'I have a secret game I would like to play'
+inp
+'its very nice, its a very lovely game'
+inp
+'its a game of fun, a game of adventure'
+inp
+'a game of death, and rats, and weird eyeballs and dripping guts and the smell of rotting gardenias.'
+inp
+'Which of you five would like to play my game?'
+'(pick 1-5)'
+inp char
+if char=1 goto 209
+goto 204
+area = 1
+'Now I would not want you to think for a second that I am not a greatful god'
+inp
+'for 109 years I have kept you alive to savor your guilt of what happened in your lives'
+inp
+'but now to show my kindness, i'll give you a present in return for all the hours of pleasure you've given me'
+inp
+'i'll finally allow you to kill yourself.'
+inp
+'WASD to move'
+'E to interact'
+goto 1
