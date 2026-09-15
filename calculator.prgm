@@ -1,0 +1,11 @@
+'Number 1'
+inp A
+'Number 2'
+inp B
+'Operation'
+inp C
+if C=+ add A B D
+if C=- sub A B D
+if C=* multi A B D
+if C=/ div A B D
+D
