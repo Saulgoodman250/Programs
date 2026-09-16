@@ -1,0 +1,56 @@
+# home
+romusage = 1
+'OS 1.0'
+if romusage=1 'rom: ' + rom.size + ' / 16000'
+'1) files'
+'2) settings'
+n = 3
+filter rom .prgm A
+filter rom .brot B
+merge A B prgms
+del OS.prgm prgms prgms
+for I in prgms n + ') ' + I, n += 1
+inp A
+if A=1 goto 19
+if A=2 goto 39
+if A.isnum sub A 3 A
+if A.isnum find A prgms B, exec B
+goto 2
+# files
+'[program files]'
+filter rom .prgm A
+A clean
+'[compressed files]'
+filter rom .brot A
+A clean
+'[text files]'
+filter rom .txt A
+A clean
+'[all]'
+rom clean
+'files: ' + rom.amount + ' | ' + 'size: ' + rom.size
+'input file to execute/read, new, del, read, decomp, or comp'
+inp A
+if A=new goto 47
+if A=del inp A, delete A, 'file deleted', goto 2
+if A=read inp A, get.data A A, A, goto 2
+if A=decomp inp name, get.data name data, brotli dec data data, replace name .brot .prgm name, create name data, goto 2
+if A=comp inp name, get.data name data, brotli enc data data, replace name .prgm .brot name, create name data, goto 2
+if A find rom A A, exec A, delete A
+goto 2
+# settings
+'settings'
+'1) show ROM usage' + romusage
+'2) exit'
+inp A
+if A=1 switch romusage, goto 39
+if A=2 goto 2	
+goto 39
+# create file
+'new file name'
+inp A
+'file contents (seperate lines with \\n)'
+inp B
+create A B
+'file created'
+goto 2
